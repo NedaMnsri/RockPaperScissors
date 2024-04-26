@@ -1,0 +1,70 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.game-title {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.game-description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    >img {
+        width: 150px;
+    }
+}
+
+.choice {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.choice:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #E44D26;
+}
+.result-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .user-choice {
+    font-weight: bold;
+  }
+  .computer-choice {
+    font-weight: bold;
+  }

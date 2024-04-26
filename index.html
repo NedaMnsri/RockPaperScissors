@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-title">Rock Paper Scissors</div>
+        <div class="game-description">
+            Welcome to the classic game of Rock-Paper-Scissors! Click on an image below to make your choice.
+        </div>
+        <div class="choices">
+            <img src="img/vecteezy_obsidian-rock-png-with-ai-generated_26773496.png" alt="Rock" class="choice" onclick="play('rock')" title="Choose Rock">
+            <img src="img/vecteezy_torn-paper-clip-art_9313934.png" alt="Paper" class="choice" onclick="play('paper')" title="Choose Paper">
+            <img src="img/vecteezy_scissor-icon-png-transparent_9663278.png" alt="Scissors" class="choice" onclick="play('scissors')" title="Choose Scissors">
+        </div>
+        <div class="result-container">
+            <div class="user-choice" id="user-choice"></div>
+            <div class="result" id="result"></div>
+            <div class="computer-choice" id="computer-choice"></div>
+        </div>
+    </div>
+
+    <script>
+        function play(userChoice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+            const result = determineWinner(userChoice, computerChoice);
+
+            document.getElementById('user-choice').textContent = `Your choice: ${userChoice}`;
+            document.getElementById('computer-choice').textContent = `Computer's choice: ${computerChoice}`;
+            document.getElementById('result').textContent = result;
+        }
+
+        function determineWinner(userChoice, computerChoice) {
+            if (userChoice === computerChoice) {
+                return `It's a tie! You both chose ${userChoice}.`;
+            }
+            if ((userChoice === 'rock' && computerChoice === 'scissors') ||
+                (userChoice === 'scissors' && computerChoice === 'paper') ||
+                (userChoice === 'paper' && computerChoice === 'rock')) {
+                return `You win! ${userChoice} beats ${computerChoice}.`;
+            }
+            return `You lose! ${computerChoice} beats ${userChoice}.`;
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
